@@ -1,0 +1,14 @@
+<div class="container">
+
+  <div class="login">
+    <h4>Iniciar sesión</h4>
+      <input class="input" type="text" #username name="username" placeholder="Username" [(ngModel)]=inputDni>
+      <input class="input" type="password" #password name="password" placeholder="Password">
+      <a href=""><p> Forgot password </p></a>
+      <button mat-raised-button	 type="submit" (click)="logIn(inputDni)" id="login-button">Login</button>
+    </div>
+ </div>
+
+
+  
+

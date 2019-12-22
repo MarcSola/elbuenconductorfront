@@ -1,0 +1,105 @@
+.container{
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    background-image: url("../../../assets/viaje.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;  
+}
+
+.login{
+  width: 20%;
+  text-align: center;
+  margin: auto;
+  /* margin-top: 100px;
+  margin-left: 250px; */
+}
+
+.login h4{
+  color: white;
+  font-size: 3em;
+  margin: 0px;
+  font-weight: normal;
+  
+}
+
+.input{
+  width: 100%;
+  padding: 12px 5px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.login button{
+
+  margin-top: 10px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  color:  #C5281C;
+  font-weight: bold;
+}
+
+@media (min-width: 320px) and (max-width: 660px) {
+  .container{
+    margin: 0;
+    padding: 0px;
+    width: 100%;
+    background-image: none;
+    background-color: #C5281C;
+    height: 600px;
+    display: block;
+    }
+
+      
+  
+
+  .login{
+    width: 293px;
+    padding-left: 49px;
+    margin-left: 0px;
+    margin-top: 0px;
+    top: 150px;
+    position: relative;
+    
+  }
+
+  .login h4{
+    color: white;
+    font-size: 1.5em;
+    margin: 0px;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  .input{
+    width: 100%;
+    padding: 12px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  
+  .login p {
+    color:white;
+    font-size: 0.8em;
+  }
+
+  .login button{
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 0px;
+  }
+
+
+}

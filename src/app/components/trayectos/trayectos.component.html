@@ -1,0 +1,105 @@
+<div class="container">
+    <header>
+        <p> Estás consultando tus trayectos. ¡Filtra por fechas para acotar tu consulta! </p>
+   </header>
+  <div class="panel">
+      <div class="expansion">
+          <!--aqui un menu??-->
+      </div>
+      <div class="content">
+          <div class="area">
+            <div class="data">
+                <!-- <i class="material-icons"> traffic </i> o navigation? -->
+                <h3>Trayectos entre rango de fechas</h3>
+        
+            </div>
+            <hr>
+            <div class="calendario">
+                <p-calendar class="input" [(ngModel)]="inicio" placeholder="Fecha inicio" styleClass="myWid70" ></p-calendar>
+        
+                <p-calendar class="input" [(ngModel)]="fin" placeholder="Fecha fin"></p-calendar>
+                <p-button (click)='getTrayectosOut(inicio,fin)' styleClass="ui-button-danger" label="Confirmar" class="btn"></p-button>
+        
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- <div class='ui-g-12 ui-md-12 ui-lg-10 tab'>
+                <p-table class=" table" *ngIf="trayectos"  [value]="trayectos">
+                <ng-template pTemplate="header">
+                <tr class="titulos">
+                    <th> Matrícula </th>
+                    <th> Km Recorridos </th>
+                    <th> Número Acelerones </th>
+                    <th> Número Frenazos </th>
+                    <th> RPM Medias </th>
+                    <th> Fecha Inicio </th>
+                    <th> Hora Inicio </th>
+                    <th> Fecha Fin </th>
+                    <th> Hora Fin </th>
+                    <th> Precio </th>
+                
+                </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-trayecto>
+                <tr >
+                    TODO matrícula en courier
+                    <td > {{trayecto.matricula}} </td>
+                    <td style="text-align: right;"> {{trayecto.kmRecorridos | number: "0.1-1"}} </td>
+                    <td style="text-align: right;">  {{trayecto.nAcelerones}} </td>
+                    <td style="text-align: right;">  {{trayecto.nFrenazos}} </td>
+                    <td style="text-align: right;">  {{trayecto.rpmMedias}} </td>
+                    <td>  {{trayecto.inicio | date: "dd/MM/yyyy"}} </td>
+                    <td>  {{trayecto.inicio | date: "hh:mm"}} </td>
+                    <td>  {{trayecto.fin | date: "dd/MM/yyyy"}} </td>
+                    <td>  {{trayecto.fin | date: "hh:mm"}} </td>
+                    <td style="text-align: right;">  {{trayecto.precio | number: "0.2-2"}} €</td>
+                </tr >
+                </ng-template>
+            </p-table> -->
+
+            <div class="conjuntoTrayectos">
+                <div class="cardTrayecto">
+                    <mat-card class="example-card"  *ngFor="let trayecto of trayectos" >
+                    
+                        <div [ngSwitch]="trayecto.mapImage">
+                            <img mat-card-image *ngSwitchCase="0" src="../../../assets/mapas/mapa0.jpg" alt="">
+                            <img mat-card-image *ngSwitchCase="1" src="../../../assets/mapas/mapa1.jpg" alt="">
+                            <img mat-card-image *ngSwitchCase="2" src="../../../assets/mapas/mapa2.jpg" alt="">
+                            <img mat-card-image *ngSwitchCase="3" src="../../../assets/mapas/mapa3.jpg" alt="">  
+                            <img mat-card-image *ngSwitchCase="4" src="../../../assets/mapas/mapa4.jpg" alt="">  
+                            <img mat-card-image *ngSwitchDefault src="../../../assets/mapas/mapa5.jpg" alt="">  
+                        </div>
+
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title> <button class="btnDetail" mat-raised-button (click)="verDetalleTrayecto(trayecto.calidad)"> DETALLE TRAYECTO </button></mat-card-title>
+                            <mat-card-subtitle></mat-card-subtitle> 
+                          </mat-card-header>
+                          <mat-card-content class="datos">
+
+                            <div>
+                                <p>  {{trayecto.inicio | date: "dd/MM/yyyy hh:mm"}} </p>  <br>
+                                <p>  {{trayecto.fin | date: "dd/MM/yyyy hh:mm"}} </p> <br>
+                                <p>  {{trayecto.kmRecorridos | number: "0.1-1"}} km</p> <br>
+                                <b> <p> {{trayecto.precio | number: "0.2-2"}} € </p></b>
+                            </div>
+                          
+                           <button mat-fab  [ngClass] ="{
+                               'nivel4' : trayecto.calidad >= 0 && trayecto.calidad < 3.33,
+                               'nivel3' : trayecto.calidad >= 3.33 && trayecto.calidad < 6.66,
+                               'nivel1' : trayecto.calidad >= 6.66 && trayecto.calidad < 10
+                           }">  {{trayecto.calidad | number: "0.2-2"}} </button>
+                            
+                         </mat-card-content>
+                         <mat-card-actions class="actions">
+                          <!-- <button mat-raised-button [color]="'success'" >DISPONIBLE</button>
+                          <button mat-raised-button>NO DISPONIBLE</button> -->
+                        </mat-card-actions>
+                      </mat-card>
+                  </div>
+              </div>
+</div>
+         
+
+

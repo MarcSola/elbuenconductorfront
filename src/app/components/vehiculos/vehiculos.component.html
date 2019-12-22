@@ -1,0 +1,79 @@
+<div class="container">
+    <header>
+        <p> Estás consultando los vehículos disponibles ¡Elige el que más te guste y empieza tu viaje! </p>
+   </header>
+  <div class="panel">
+      <div class="expansion">
+          <!--aqui un menu??-->
+      </div>
+      <div class="content">
+          <div class="area">
+                <div class="data">
+                    <!-- <i class="material-icons"> directions_car </i>  -->
+                    <h3>Vehículos Disponibles</h3>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div> 
+
+
+<!-- <div class='ui-g-6 ui-md-12 ui-lg-10'>
+    <p-table class=" table" *ngIf="Vehiculos"  [value]="Vehiculos">
+    <ng-template pTemplate="header" >
+    <tr class="titulos">
+        <th> Marca </th>
+        <th> Modelo </th>
+        <th> Combustible </th>
+        <th> Color </th>
+        <th> Matrícula </th>
+        <th> Fecha Matriculación </th>
+      
+    </tr>
+     </ng-template>
+     <ng-template pTemplate="body" let-vehiculo > 
+    <tr   >
+        <td > {{vehiculo.marca}} </td>
+        <td > {{vehiculo.modelo}} </td>
+        <td>  {{vehiculo.combustible}} </td>
+        <td>  {{vehiculo.color}} </td>
+        <td>  {{vehiculo.matricula}} </td>
+        <td>  {{vehiculo.fechaMatriculacion | date: "dd/MM/yyyy"}} </td>
+    </tr>
+     </ng-template>
+</p-table>
+</div> -->
+
+
+  <div 
+  class="conjuntoVehicles">
+    <div class="cardVehicle">
+        <mat-card class="example-card"  *ngFor="let vehiculo of Vehiculos">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{vehiculo.marca}}</mat-card-title>
+              <mat-card-subtitle>{{vehiculo.modelo}}</mat-card-subtitle>
+            </mat-card-header>
+            <div [ngSwitch]="vehiculo.coeficiente">
+                <img mat-card-image *ngSwitchCase="1.2" src="../../../assets/golfplus.jpg" alt=""> 
+                <img mat-card-image *ngSwitchCase="0.8" src="../../../assets/seatibiza.jpg" alt="">
+                <img mat-card-image *ngSwitchDefault src="../../../assets/tesla.jpg" alt="">
+         
+            </div>
+            
+            <mat-card-content class="datos">
+               <p> Combustible: {{vehiculo.combustible}} </p>  <br>
+               <p> Color: {{vehiculo.color}} </p> <br>
+               <p> Matricula: {{vehiculo.matricula}} </p> <br>
+               <p> Fecha Matriculación : {{vehiculo.fechaMatriculacion | date: "dd/MM/yyyy"}} </p> <br>
+            
+            </mat-card-content>
+             <mat-card-actions class="actions">
+              <button mat-raised-button [color]="'success'" >DISPONIBLE</button>
+              <button mat-raised-button>NO DISPONIBLE</button>
+            </mat-card-actions>
+          </mat-card>
+      </div>
+  </div>
+  <!--TODO añadir un resumen de la reserva-->
+</div>

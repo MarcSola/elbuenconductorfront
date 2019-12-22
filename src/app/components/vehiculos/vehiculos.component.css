@@ -1,0 +1,142 @@
+.area{
+    width: 65%;
+}
+.data{
+    padding: 20px;
+    display: flex;
+}
+
+.panel{
+    display: flex;
+    margin-top: 50px;
+}
+
+.content{
+    width: 40%;
+   
+}
+
+.calendario{
+    margin-top: 20px;
+}
+
+.input{
+    margin: 10px;
+    padding: 16px;
+}
+
+.btn{
+    background-color: #C5281C;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.tab{
+    margin-top: 80px;
+}
+
+.cardVehicle{
+   
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.example-card{
+    margin: 20px !important;
+}
+
+
+.mat-success {
+    background-color: green;
+    color: #fff;
+}
+
+.actions{
+    text-align:  center;
+
+}
+
+@media (min-width: 320px) and (max-width: 660px) {
+    
+    .container{
+        margin: 0;
+        width: 100%;
+    }
+    
+
+    .panel{
+        display: flex;
+        width: 153%;
+        margin: auto;
+        margin-top: 0px;
+    }
+    
+    .content{
+        width: 100%;
+       
+    }
+
+    .data{
+        padding: 20px;
+        display: flex;
+        text-align: center;
+        
+    }
+    
+   
+    .calendario{
+        margin-top: 20px;
+    }
+    
+    .input{
+        margin: 10px;
+        padding: 16px;
+    }
+    
+    .btn{
+        background-color: #C5281C;
+        border-radius: 10px;
+        padding: 5px;
+    }
+    
+    .tab{
+        display: none;
+        margin-top: 80px;
+        
+    }
+    
+
+    .titulos{
+        display: flex;
+        flex-direction: column;
+    }
+
+        
+    .cardVehicle{
+    
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .example-card{
+        margin: 20px !important;
+    }
+
+
+    .mat-success {
+        background-color: green;
+        color: #fff;
+    }
+
+    .actions{
+        text-align:  center;
+
+    }
+
+    .datos p{
+        margin: 0px;
+    }
+
+}
